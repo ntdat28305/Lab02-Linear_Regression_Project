@@ -19,7 +19,6 @@ First, ensure you have Python installed. Then, install all required libraries us
 ```bash
 pip install -r requirements.txt
 
----
 ```
 
 ### 2. Generate the Models
@@ -31,5 +30,4 @@ Open the Jupyter Notebook lab2-ml.ipynb and Run All Cells
 Once the .pkl files are generated in the root directory, you can deploy the web interface by running:
 ```bash
 streamlit run app.py
----
 ```
