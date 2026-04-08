@@ -61,7 +61,8 @@ with tab1:
                 cluster = kmeans.predict(inp[['longitude', 'latitude']])[0]
                 for i in range(5): inp[f'cluster_{i}'] = 1 if cluster == i else 0
                 for col in ['ocean_proximity_INLAND', 'ocean_proximity_ISLAND', 'ocean_proximity_NEAR BAY', 'ocean_proximity_NEAR OCEAN']: inp[col] = 0
-                cols_order = ['longitude', 'latitude', 'housing_median_age', 'total_rooms', 'total_bedrooms', 'population', 'households', 'median_income', 'rooms_per_household', 'bedrooms_per_room', 'population_per_household', 'ocean_proximity_INLAND', 'ocean_proximity_ISLAND', 'ocean_proximity_NEAR BAY', 'ocean_proximity_NEAR OCEAN', 'cluster_0', 'cluster_1', 'cluster_2', 'cluster_3', 'cluster_4']
+                cols_order = ['longitude', 'latitude', 'housing_median_age', 'total_rooms', 'total_bedrooms', 'population', 'households', 'median_income', 'ocean_proximity_INLAND', 'ocean_proximity_ISLAND', 'ocean_proximity_NEAR BAY', 'ocean_proximity_NEAR OCEAN', 'rooms_per_household', 'bedrooms_per_room', 'population_per_household', 'cluster_0', 'cluster_1', 'cluster_2', 'cluster_3', 'cluster_4']
+                
                 prediction = model.predict(inp[cols_order])
                 st.balloons()
                 st.markdown(f"<div style='background-color:#d4edda; padding:20px; border-radius:10px; border: 1px solid #c3e6cb;'><h2 style='color:#155724; margin:0;'>Prediction value : ${prediction[0]:,.2f}</h2></div>", unsafe_allow_html=True)
